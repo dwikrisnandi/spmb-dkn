@@ -32,18 +32,20 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4 py-12 sm:px-6 lg:px-8">
-      <div className="w-full max-w-md space-y-8 bg-white p-8 rounded-xl shadow-lg border border-gray-100">
-        <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Login ke {settings?.shortName || "SPMB DKN"}
+    <div className="min-h-screen bg-[#fafafa] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden font-sans">
+      {/* Decorative Blobs */}
+      <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-red-100/30 rounded-full blur-[120px] pointer-events-none z-0"></div>
+      <div className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-slate-200/40 rounded-full blur-[100px] pointer-events-none z-0"></div>
+
+      <div className="max-w-md w-full space-y-8 bg-white/70 backdrop-blur-xl p-10 rounded-[2.5rem] shadow-[0_40px_80px_rgba(0,0,0,0.04)] border border-white/20 relative z-10">
+        <div className="text-center space-y-4">
+          <div className="flex justify-center">
+             <div className="w-16 h-16 bg-red-700 rounded-[1.5rem] flex items-center justify-center text-white font-black text-2xl shadow-2xl shadow-red-200 transition-transform hover:scale-110">P</div>
+          </div>
+          <h2 className="text-3xl font-black text-slate-900 tracking-tighter uppercase">
+            Sign In {settings?.shortName || ""}
           </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
-            Atau{" "}
-            <Link href="/register" className="font-medium text-red-700 hover:text-blue-500">
-              daftar akun baru di sini
-            </Link>
-          </p>
+          <p className="text-sm font-bold text-slate-400 uppercase tracking-widest">Masukkan akun pendaftaran Anda</p>
         </div>
         
         {error && (
@@ -88,41 +90,22 @@ export default function LoginPage() {
             </div>
           </div>
 
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input
-                id="remember-me"
-                name="remember-me"
-                type="checkbox"
-                className="h-4 w-4 rounded border-gray-300 text-red-700 focus:ring-red-500"
-              />
-              <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
-                Ingat saya
-              </label>
-            </div>
-
-            <div className="text-sm">
-              <Link href="#" className="font-medium text-red-700 hover:text-blue-500">
-                Lupa password?
-              </Link>
-            </div>
-          </div>
-
           <div>
             <button
               type="submit"
-              className="group relative flex w-full justify-center rounded-md border border-transparent bg-red-700 py-2 px-4 text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-all"
+              className="group relative flex w-full justify-center rounded-2xl border border-transparent bg-red-700 py-4 px-4 text-sm font-black text-white hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-all shadow-xl shadow-red-100 uppercase tracking-widest"
             >
-              Sign in
+              Explore Now
+              <svg xmlns="http://www.w3.org/2000/svg" className="absolute right-6 h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
             </button>
           </div>
+
+          <div className="text-center pt-4">
+             <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">
+                Belum punya akun? <Link href="/register" className="text-red-700 hover:underline">Daftar Akun Baru</Link>
+             </p>
+          </div>
         </form>
-        
-        <div className="mt-6">
-          <Link href="/" className="flex justify-center text-sm font-medium text-gray-600 hover:text-gray-500">
-            &larr; Kembali ke Beranda
-          </Link>
-        </div>
       </div>
     </div>
   );
