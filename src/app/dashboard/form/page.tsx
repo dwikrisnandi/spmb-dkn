@@ -4,9 +4,11 @@ import Link from "next/link";
 import LogoutButton from "@/components/LogoutButton";
 import { useState } from "react";
 import { useSession } from "next-auth/react";
+import { useSettings } from "@/components/SettingsProvider";
 
 export default function FormSubmission() {
   const { data: session } = useSession();
+  const settings = useSettings();
   const [step, setStep] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   
@@ -71,7 +73,7 @@ export default function FormSubmission() {
       {/* Sidebar - Same as dashboard */}
       <aside className="w-64 bg-white shadow-md flex flex-col hidden md:flex">
         <div className="p-4 border-b">
-          <h1 className="text-xl font-bold text-blue-600">SPMB DKN</h1>
+          <h1 className="text-xl font-bold text-blue-600">{settings?.shortName || "SPMB DKN"}</h1>
           <p className="text-xs text-gray-500">Panel Calon Mahasiswa</p>
         </div>
         <nav className="flex-1 p-4 space-y-2">

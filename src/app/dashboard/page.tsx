@@ -1,13 +1,15 @@
 import Link from "next/link";
 import LogoutButton from "@/components/LogoutButton";
+import { prisma } from "@/lib/prisma";
 
-export default function UserDashboard() {
+export default async function UserDashboard() {
+  const settings = await prisma.webSetting.findFirst();
   return (
     <div className="flex h-screen bg-gray-100">
       {/* Sidebar */}
       <aside className="w-64 bg-white shadow-md flex flex-col hidden md:flex">
         <div className="p-4 border-b">
-          <h1 className="text-xl font-bold text-blue-600">SPMB DKN</h1>
+          <h1 className="text-xl font-bold text-blue-600">{settings?.shortName || "SPMB DKN"}</h1>
           <p className="text-xs text-gray-500">Panel Calon Mahasiswa</p>
         </div>
         <nav className="flex-1 p-4 space-y-2">

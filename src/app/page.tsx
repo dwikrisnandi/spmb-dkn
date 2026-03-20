@@ -1,11 +1,13 @@
 import Link from "next/link";
+import { prisma } from "@/lib/prisma";
 
-export default function Home() {
+export default async function Home() {
+  const settings = await prisma.webSetting.findFirst();
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       <header className="px-4 lg:px-6 h-16 flex items-center shadow-sm bg-white">
         <Link className="flex items-center justify-center font-bold text-xl text-blue-600" href="/">
-          SPMB DKN
+          {settings?.shortName || "SPMB DKN"}
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
           <Link className="text-sm font-medium hover:text-blue-600 transition-colors" href="#">
@@ -28,7 +30,7 @@ export default function Home() {
             <div className="flex flex-col items-center space-y-4">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-white">
-                  Sistem Penerimaan Mahasiswa Baru
+                  {settings?.titleHome || "Sistem Penerimaan Mahasiswa Baru"}
                 </h1>
                 <p className="mx-auto max-w-[700px] text-blue-100 md:text-xl">
                   Daftar sekarang dan raih masa depan cerah Anda bersama kami. Pendaftaran mahasiswa baru tahun akademik 2026/2027 telah dibuka!
@@ -83,7 +85,7 @@ export default function Home() {
       </main>
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t bg-white">
         <p className="text-xs text-gray-500">
-          © 2026 SPMB DKN. All rights reserved.
+          © {new Date().getFullYear()} {settings?.siteName || "SPMB DKN"}. All rights reserved.
         </p>
         <nav className="sm:ml-auto flex gap-4 sm:gap-6">
           <Link className="text-xs hover:underline underline-offset-4 text-gray-500" href="#">

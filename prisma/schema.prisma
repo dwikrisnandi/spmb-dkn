@@ -39,7 +39,7 @@ model WebSetting {
   institutionName      String?   @map("institution_name")
   institutionShortName String?   @map("institution_short_name")
   institutionSynopsis  String?   @map("institution_synopsis")
-  institutionVision    String?   @map("institution_vision") @db.Text
+  institutionVision    String?   @map("institution_vision_mission") @db.Text
   institutionHistory   String?   @map("institution_history") @db.Text
   footer               String?   @db.Text
   linkUniv             String?   @map("link_univ")
