@@ -43,7 +43,7 @@ export default function LoginPage() {
              <div className="w-16 h-16 bg-red-700 rounded-[1.5rem] flex items-center justify-center text-white font-black text-2xl shadow-2xl shadow-red-200 transition-transform hover:scale-110">P</div>
           </div>
           <h2 className="text-3xl font-black text-slate-900 tracking-tighter uppercase">
-            Sign In {settings?.shortName || ""}
+            Sign In {settings?.short_name || ""}
           </h2>
           <p className="text-sm font-bold text-slate-400 uppercase tracking-widest">Masukkan akun pendaftaran Anda</p>
         </div>

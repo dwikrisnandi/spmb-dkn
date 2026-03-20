@@ -3,12 +3,12 @@
 import React, { createContext, useContext } from "react";
 
 export type WebSettingData = {
-  siteName?: string | null;
-  shortName?: string | null;
-  titleDashboard?: string | null;
-  paymentBank?: string | null;
-  paymentAccount?: string | null;
-  paymentName?: string | null;
+  site_name?: string | null;
+  short_name?: string | null;
+  title_dashboard?: string | null;
+  payment_bank?: string | null;
+  payment_account?: string | null;
+  payment_name?: string | null;
 };
 
 const SettingsContext = createContext<WebSettingData>({});

@@ -13,7 +13,7 @@ export default async function AdminSettings() {
     <div className="flex h-screen bg-gray-50">
       <aside className="w-64 bg-slate-900 text-white shadow-xl flex flex-col hidden md:flex">
         <div className="p-4 border-b border-gray-800">
-          <h1 className="text-xl font-bold text-white">{setting?.shortName || "SPMB DKN"}</h1>
+          <h1 className="text-xl font-bold text-white">{setting?.short_name || "SPMB DKN"}</h1>
           <p className="text-xs text-gray-400">Admin Control Panel</p>
         </div>
         <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
@@ -51,23 +51,23 @@ export default async function AdminSettings() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Nama Institusi</label>
-                  <input type="text" defaultValue={setting?.institutionName || "Universitas Singaperbangsa Karawang"} className="w-full rounded-md border border-gray-300 px-3 py-2 bg-gray-50" />
+                  <input type="text" defaultValue={setting?.institution_name || "Universitas Singaperbangsa Karawang"} className="w-full rounded-md border border-gray-300 px-3 py-2 bg-gray-50" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Singkatan Institusi</label>
-                  <input type="text" defaultValue={setting?.institutionShortName || "UNSIKA"} className="w-full rounded-md border border-gray-300 px-3 py-2 bg-gray-50" />
+                  <input type="text" defaultValue={setting?.institution_short_name || "UNSIKA"} className="w-full rounded-md border border-gray-300 px-3 py-2 bg-gray-50" />
                 </div>
                 <div className="md:col-span-2">
                   <label className="block text-sm font-medium text-gray-700 mb-1">Alamat Kontak</label>
-                  <textarea defaultValue={setting?.contactAddress || "Jl. HS.Ronggo Waluyo, Puseurjaya, Telukjambe Timur, Karawang"} className="w-full rounded-md border border-gray-300 px-3 py-2 bg-gray-50" rows={2}></textarea>
+                  <textarea defaultValue={setting?.contact_address || "Jl. HS.Ronggo Waluyo, Puseurjaya, Telukjambe Timur, Karawang"} className="w-full rounded-md border border-gray-300 px-3 py-2 bg-gray-50" rows={2}></textarea>
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Email Kontak</label>
-                  <input type="email" defaultValue={setting?.contactEmail || "info@unsika.ac.id"} className="w-full rounded-md border border-gray-300 px-3 py-2 bg-gray-50" />
+                  <input type="email" defaultValue={setting?.contact_email || "info@unsika.ac.id"} className="w-full rounded-md border border-gray-300 px-3 py-2 bg-gray-50" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Telepon Kontak</label>
-                  <input type="text" defaultValue={setting?.contactTelp || "(0267) 641177"} className="w-full rounded-md border border-gray-300 px-3 py-2 bg-gray-50" />
+                  <input type="text" defaultValue={setting?.contact_telp || "(0267) 641177"} className="w-full rounded-md border border-gray-300 px-3 py-2 bg-gray-50" />
                 </div>
               </div>
 
@@ -75,15 +75,15 @@ export default async function AdminSettings() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Bank</label>
-                  <input type="text" defaultValue={setting?.paymentBank || "Bank BSI"} className="w-full rounded-md border border-gray-300 px-3 py-2 bg-gray-50" />
+                  <input type="text" defaultValue={setting?.payment_bank || "Bank BSI"} className="w-full rounded-md border border-gray-300 px-3 py-2 bg-gray-50" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Atas Nama</label>
-                  <input type="text" defaultValue={setting?.paymentName || "SPMB UNSIKA"} className="w-full rounded-md border border-gray-300 px-3 py-2 bg-gray-50" />
+                  <input type="text" defaultValue={setting?.payment_name || "SPMB UNSIKA"} className="w-full rounded-md border border-gray-300 px-3 py-2 bg-gray-50" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Nomor Rekening</label>
-                  <input type="text" defaultValue={setting?.paymentAccount || "7123456789"} className="w-full rounded-md border border-gray-300 px-3 py-2 bg-gray-50" />
+                  <input type="text" defaultValue={setting?.payment_account || "7123456789"} className="w-full rounded-md border border-gray-300 px-3 py-2 bg-gray-50" />
                 </div>
               </div>
 

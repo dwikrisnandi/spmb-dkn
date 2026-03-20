@@ -29,37 +29,44 @@ model User {
 }
 
 model WebSetting {
-  id                   BigInt    @id @default(autoincrement())
-  name                 String?
-  siteName             String?   @map("site_name")
-  shortName            String?   @map("short_name")
-  titleHome            String?   @map("title_home")
-  titleDashboard       String?   @map("title_dashboard")
-  titleExam            String?   @map("title_exam")
-  institutionName      String?   @map("institution_name")
-  institutionShortName String?   @map("institution_short_name")
-  institutionSynopsis  String?   @map("institution_synopsis")
-  institutionVision    String?   @map("institution_vision_mission") @db.Text
-  institutionHistory   String?   @map("institution_history") @db.Text
-  footer               String?   @db.Text
-  linkUniv             String?   @map("link_univ")
-  contactTelp          String?   @map("contact_telp")
-  contactEmail         String?   @map("contact_email")
-  contactAddress       String?   @map("contact_address")
-  contactWhatsapp      String?   @map("contact_whatsapp")
-  contactMaps          String?   @map("contact_maps") @db.Text
-  contactMapsLink      String?   @map("contact_maps_link") @db.Text
-  paymentBank          String?   @map("payment_bank")
-  paymentAccount       String?   @map("payment_account")
-  paymentName          String?   @map("payment_name")
-  logo                 String?
-  favicon              String?
-  cover                String?
-  brochure             String?
-  costDetails          String?   @map("cost_details")
-  cr                   String
-  createdAt            DateTime? @default(now()) @map("created_at")
-  updatedAt            DateTime? @updatedAt @map("updated_at")
+  id                      BigInt    @id @default(autoincrement())
+  name                    String?
+  site_name               String?
+  short_name              String?
+  title_home              String?
+  title_dashboard         String?
+  title_exam              String?
+  institution_name        String?
+  institution_short_name   String?
+  institution_synopsis    String?
+  institution_vision_mission String?   @db.Text
+  institution_history     String?   @db.Text
+  institution_superioty   String?   @db.Text
+  institution_cooperate   String?   @db.Text
+  footer                  String?   @db.Text
+  link_univ               String?
+  contact_telp            String?
+  contact_email           String?
+  contact_fax             String?
+  contact_address         String?
+  contact_maps            String?   @db.Text
+  contact_maps_link       String?   @db.Text
+  contact_facebook        String?
+  contact_whatsapp        String?
+  contact_instagram       String?
+  contact_twitter         String?
+  contact_youtube         String?
+  payment_bank            String?
+  payment_account         String?
+  payment_name            String?
+  logo                    String?
+  favicon                 String?
+  cover                   String?
+  brochure                String?
+  cost_details            String?
+  cr                      String
+  created_at              DateTime? @default(now())
+  updated_at              DateTime? @updatedAt
 
   @@map("web_settings")
 }

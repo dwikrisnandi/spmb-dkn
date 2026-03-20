@@ -50,7 +50,7 @@ export default function PaymentSubmission() {
     <div className="flex h-screen bg-gray-100">
       <aside className="w-64 bg-white shadow-md flex flex-col hidden md:flex">
         <div className="p-4 border-b">
-          <h1 className="text-xl font-bold text-red-700">{settings?.shortName || "SPMB DKN"}</h1>
+          <h1 className="text-xl font-bold text-red-700">{settings?.short_name || "SPMB DKN"}</h1>
           <p className="text-xs text-gray-500">Panel Calon Mahasiswa</p>
         </div>
         <nav className="flex-1 p-4 space-y-2">
@@ -72,7 +72,7 @@ export default function PaymentSubmission() {
             <h3 className="text-lg font-semibold text-gray-800 mb-2">Instruksi Pembayaran</h3>
             <p className="text-sm text-gray-600 mb-6">
                 Silakan transfer biaya registrasi sebesar <strong>Rp 250.000</strong> ke rekening berikut:
-                <br /><strong>{settings?.paymentBank || 'Bank BSI'}: {settings?.paymentAccount || '7123456789'} a.n {settings?.paymentName || 'SPMB DKN'}</strong>
+                <br /><strong>{settings?.payment_bank || 'Bank BSI'}: {settings?.payment_account || '7123456789'} a.n {settings?.payment_name || 'SPMB DKN'}</strong>
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4 border-t pt-4">

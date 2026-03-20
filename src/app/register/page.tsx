@@ -74,7 +74,7 @@ export default function RegisterPage() {
           <h2 className="text-3xl font-black text-slate-900 tracking-tighter uppercase">
             Create Account
           </h2>
-          <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Gabung dengan {settings?.shortName || "Kampus Kami"}</p>
+          <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Gabung dengan {settings?.short_name || "Kampus Kami"}</p>
         </div>
 
         {error && (

@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await prisma.webSetting.findFirst();
   return {
-    title: settings?.titleHome || settings?.siteName || "SPMB DKN",
-    description: settings?.institutionSynopsis || "Sistem Penerimaan Mahasiswa Baru",
+    title: settings?.title_home || settings?.site_name || "SPMB DKN",
+    description: settings?.institution_synopsis || "Sistem Penerimaan Mahasiswa Baru",
     icons: {
       icon: settings?.favicon ? `/images/${settings.favicon}` : "/favicon.ico",
     },
@@ -33,12 +33,12 @@ export default async function RootLayout({
 }>) {
   const rawSettings = await prisma.webSetting.findFirst();
   const settings = rawSettings ? {
-    siteName: rawSettings.siteName,
-    shortName: rawSettings.shortName,
-    titleDashboard: rawSettings.titleDashboard,
-    paymentBank: rawSettings.paymentBank,
-    paymentAccount: rawSettings.paymentAccount,
-    paymentName: rawSettings.paymentName,
+    site_name: rawSettings.site_name,
+    short_name: rawSettings.short_name,
+    title_dashboard: rawSettings.title_dashboard,
+    payment_bank: rawSettings.payment_bank,
+    payment_account: rawSettings.payment_account,
+    payment_name: rawSettings.payment_name,
   } : {};
 
   return (

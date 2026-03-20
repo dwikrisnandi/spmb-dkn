@@ -12,7 +12,7 @@ export default async function UserDashboard() {
           <div className="flex items-center gap-3 group cursor-pointer">
              <div className="w-10 h-10 bg-red-700 rounded-xl flex items-center justify-center text-white font-black shadow-lg shadow-red-100 transition-transform group-hover:scale-110">P</div>
              <div className="flex flex-col">
-                <h1 className="text-lg font-black text-slate-900 leading-tight uppercase tracking-tighter">{settings?.shortName || "SPMB"}</h1>
+                <h1 className="text-lg font-black text-slate-900 leading-tight uppercase tracking-tighter">{settings?.short_name || "SPMB"}</h1>
                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Student Panel</p>
              </div>
           </div>
