@@ -46,12 +46,17 @@ model WebSetting {
   contactTelp          String?   @map("contact_telp")
   contactEmail         String?   @map("contact_email")
   contactAddress       String?   @map("contact_address")
+  contactWhatsapp      String?   @map("contact_whatsapp")
+  contactMaps          String?   @map("contact_maps") @db.Text
+  contactMapsLink      String?   @map("contact_maps_link") @db.Text
   paymentBank          String?   @map("payment_bank")
   paymentAccount       String?   @map("payment_account")
   paymentName          String?   @map("payment_name")
   logo                 String?
   favicon              String?
   cover                String?
+  brochure             String?
+  costDetails          String?   @map("cost_details")
   cr                   String
   createdAt            DateTime? @default(now()) @map("created_at")
   updatedAt            DateTime? @updatedAt @map("updated_at")

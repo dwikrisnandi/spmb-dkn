@@ -13,7 +13,7 @@ export default async function AdminSettings() {
     <div className="flex h-screen bg-gray-50">
       <aside className="w-64 bg-slate-900 text-white shadow-xl flex flex-col hidden md:flex">
         <div className="p-4 border-b border-gray-800">
-          <h1 className="text-xl font-bold text-white">{settings?.shortName || "SPMB DKN"}</h1>
+          <h1 className="text-xl font-bold text-white">{setting?.shortName || "SPMB DKN"}</h1>
           <p className="text-xs text-gray-400">Admin Control Panel</p>
         </div>
         <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
