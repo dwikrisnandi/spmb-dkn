@@ -7,19 +7,36 @@ export default async function UserDashboard() {
   return (
     <div className="flex h-screen bg-gray-100">
       {/* Sidebar */}
-      <aside className="w-64 bg-white shadow-md flex flex-col hidden md:flex">
-        <div className="p-4 border-b">
-          <h1 className="text-xl font-bold text-red-700">{settings?.shortName || "SPMB DKN"}</h1>
-          <p className="text-xs text-gray-500">Panel Calon Mahasiswa</p>
+      <aside className="w-72 bg-white/80 backdrop-blur-xl border-r border-slate-100 flex flex-col hidden md:flex relative z-20">
+        <div className="p-8 border-b border-slate-50">
+          <div className="flex items-center gap-3 group cursor-pointer">
+             <div className="w-10 h-10 bg-red-700 rounded-xl flex items-center justify-center text-white font-black shadow-lg shadow-red-100 transition-transform group-hover:scale-110">P</div>
+             <div className="flex flex-col">
+                <h1 className="text-lg font-black text-slate-900 leading-tight uppercase tracking-tighter">{settings?.shortName || "SPMB"}</h1>
+                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Student Panel</p>
+             </div>
+          </div>
         </div>
-        <nav className="flex-1 p-4 space-y-2">
-          <Link href="/dashboard" className="block p-3 rounded-lg bg-red-50 text-red-800 font-medium">Dashboard</Link>
-          <Link href="/dashboard/form" className="block p-3 rounded-lg text-gray-600 hover:bg-gray-50">Pengisian Formulir</Link>
-          <Link href="/dashboard/documents" className="block p-3 rounded-lg text-gray-600 hover:bg-gray-50">Upload Dokumen</Link>
-          <Link href="/dashboard/payment" className="block p-3 rounded-lg text-gray-600 hover:bg-gray-50">Pembayaran</Link>
-          <Link href="/dashboard/exams" className="block p-3 rounded-lg text-gray-600 hover:bg-gray-50">Ujian Online</Link>
+        <nav className="flex-1 p-6 space-y-2">
+          <Link href="/dashboard" className="flex items-center gap-3 p-4 rounded-2xl bg-red-50 text-red-700 font-black text-xs uppercase tracking-widest transition-all shadow-sm">
+             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>
+             Dashboard
+          </Link>
+          {[
+            { n: 'Formulir', h: '/dashboard/form', i: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
+            { n: 'Dokumen', h: '/dashboard/documents', i: 'M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12' },
+            { n: 'Pembayaran', h: '/dashboard/payment', i: 'M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' },
+            { n: 'Ujian', h: '/dashboard/exams', i: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' }
+          ].map(x => (
+            <Link key={x.n} href={x.h} className="flex items-center gap-3 p-4 rounded-2xl text-slate-500 hover:bg-slate-50 hover:text-red-700 font-bold text-xs uppercase tracking-widest transition-all">
+               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 opacity-50 group-hover:opacity-100" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={x.i} /></svg>
+               {x.n}
+            </Link>
+          ))}
         </nav>
-        <LogoutButton />
+        <div className="p-6">
+           <LogoutButton />
+        </div>
       </aside>
 
       {/* Main Content */}
