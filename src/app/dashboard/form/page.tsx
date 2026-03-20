@@ -73,12 +73,12 @@ export default function FormSubmission() {
       {/* Sidebar - Same as dashboard */}
       <aside className="w-64 bg-white shadow-md flex flex-col hidden md:flex">
         <div className="p-4 border-b">
-          <h1 className="text-xl font-bold text-blue-600">{settings?.shortName || "SPMB DKN"}</h1>
+          <h1 className="text-xl font-bold text-red-700">{settings?.shortName || "SPMB DKN"}</h1>
           <p className="text-xs text-gray-500">Panel Calon Mahasiswa</p>
         </div>
         <nav className="flex-1 p-4 space-y-2">
           <Link href="/dashboard" className="block p-3 rounded-lg text-gray-600 hover:bg-gray-50 font-medium">Dashboard</Link>
-          <Link href="/dashboard/form" className="block p-3 rounded-lg bg-blue-50 text-blue-700">Pengisian Formulir</Link>
+          <Link href="/dashboard/form" className="block p-3 rounded-lg bg-red-50 text-red-800">Pengisian Formulir</Link>
           <Link href="/dashboard/documents" className="block p-3 rounded-lg text-gray-600 hover:bg-gray-50">Upload Dokumen</Link>
           <Link href="/dashboard/payment" className="block p-3 rounded-lg text-gray-600 hover:bg-gray-50">Pembayaran</Link>
         </nav>
@@ -96,18 +96,18 @@ export default function FormSubmission() {
             
             {/* Stepper */}
             <div className="flex items-center justify-between mb-8">
-              <div className={`flex flex-col items-center cursor-pointer ${step >= 1 ? 'text-blue-600' : 'text-gray-400'}`} onClick={() => setStep(1)}>
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold border-2 mb-2 ${step >= 1 ? 'border-blue-600 bg-blue-50' : 'border-gray-300'}`}>1</div>
+              <div className={`flex flex-col items-center cursor-pointer ${step >= 1 ? 'text-red-700' : 'text-gray-400'}`} onClick={() => setStep(1)}>
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold border-2 mb-2 ${step >= 1 ? 'border-blue-600 bg-red-50' : 'border-gray-300'}`}>1</div>
                 <span className="text-sm font-medium">Biodata Diri</span>
               </div>
-              <div className={`flex-1 h-1 mx-4 rounded ${step >= 2 ? 'bg-blue-600' : 'bg-gray-200'}`}></div>
-              <div className={`flex flex-col items-center cursor-pointer ${step >= 2 ? 'text-blue-600' : 'text-gray-400'}`} onClick={() => setStep(2)}>
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold border-2 mb-2 ${step >= 2 ? 'border-blue-600 bg-blue-50' : 'border-gray-300'}`}>2</div>
+              <div className={`flex-1 h-1 mx-4 rounded ${step >= 2 ? 'bg-red-700' : 'bg-gray-200'}`}></div>
+              <div className={`flex flex-col items-center cursor-pointer ${step >= 2 ? 'text-red-700' : 'text-gray-400'}`} onClick={() => setStep(2)}>
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold border-2 mb-2 ${step >= 2 ? 'border-blue-600 bg-red-50' : 'border-gray-300'}`}>2</div>
                 <span className="text-sm font-medium">Data Orang Tua</span>
               </div>
-              <div className={`flex-1 h-1 mx-4 rounded ${step >= 3 ? 'bg-blue-600' : 'bg-gray-200'}`}></div>
-              <div className={`flex flex-col items-center cursor-pointer ${step >= 3 ? 'text-blue-600' : 'text-gray-400'}`} onClick={() => setStep(3)}>
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold border-2 mb-2 ${step >= 3 ? 'border-blue-600 bg-blue-50' : 'border-gray-300'}`}>3</div>
+              <div className={`flex-1 h-1 mx-4 rounded ${step >= 3 ? 'bg-red-700' : 'bg-gray-200'}`}></div>
+              <div className={`flex flex-col items-center cursor-pointer ${step >= 3 ? 'text-red-700' : 'text-gray-400'}`} onClick={() => setStep(3)}>
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold border-2 mb-2 ${step >= 3 ? 'border-blue-600 bg-red-50' : 'border-gray-300'}`}>3</div>
                 <span className="text-sm font-medium">Asal Sekolah</span>
               </div>
             </div>
@@ -208,7 +208,7 @@ export default function FormSubmission() {
                 <button 
                   type="submit"
                   disabled={isLoading}
-                  className="px-6 py-2 rounded-md font-medium text-sm bg-blue-600 text-white hover:bg-blue-700 disabled:bg-blue-400"
+                  className="px-6 py-2 rounded-md font-medium text-sm bg-red-700 text-white hover:bg-red-800 disabled:bg-blue-400"
                 >
                   {isLoading ? 'Menyimpan...' : (step === 3 ? 'Kirim Formulir' : 'Selanjutnya')}
                 </button>

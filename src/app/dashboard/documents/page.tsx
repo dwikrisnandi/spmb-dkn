@@ -93,7 +93,7 @@ export default function DocumentUpload() {
           </div>
         ) : (
           <div 
-            className={`relative border-2 border-dashed rounded-xl p-8 text-center transition-all duration-200 ease-in-out ${isActive ? 'border-blue-500 bg-blue-50 scale-[1.02]' : 'border-gray-300 hover:border-gray-400 hover:bg-gray-50'}`}
+            className={`relative border-2 border-dashed rounded-xl p-8 text-center transition-all duration-200 ease-in-out ${isActive ? 'border-red-500 bg-red-50 scale-[1.02]' : 'border-gray-300 hover:border-gray-400 hover:bg-gray-50'}`}
             onDragEnter={(e) => handleDrag(e, type)}
             onDragLeave={(e) => handleDrag(e, type)}
             onDragOver={(e) => handleDrag(e, type)}
@@ -107,7 +107,7 @@ export default function DocumentUpload() {
               onChange={(e) => handleChange(e, type)}
             />
             <label htmlFor={`file-upload-${type}`} className="cursor-pointer flex flex-col items-center justify-center h-full w-full">
-              <div className={`h-12 w-12 rounded-full flex items-center justify-center mb-3 ${isActive ? 'bg-blue-100 text-blue-600' : 'bg-gray-100 text-gray-500'}`}>
+              <div className={`h-12 w-12 rounded-full flex items-center justify-center mb-3 ${isActive ? 'bg-blue-100 text-red-700' : 'bg-gray-100 text-gray-500'}`}>
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
                 </svg>
@@ -126,13 +126,13 @@ export default function DocumentUpload() {
       {/* Sidebar */}
       <aside className="w-64 bg-white shadow-md flex flex-col hidden md:flex">
         <div className="p-4 border-b">
-          <h1 className="text-xl font-bold text-blue-600">{settings?.shortName || "SPMB DKN"}</h1>
+          <h1 className="text-xl font-bold text-red-700">{settings?.shortName || "SPMB DKN"}</h1>
           <p className="text-xs text-gray-500">Panel Calon Mahasiswa</p>
         </div>
         <nav className="flex-1 p-4 space-y-2">
           <Link href="/dashboard" className="block p-3 rounded-lg text-gray-600 hover:bg-gray-50 font-medium">Dashboard</Link>
           <Link href="/dashboard/form" className="block p-3 rounded-lg text-gray-600 hover:bg-gray-50">Pengisian Formulir</Link>
-          <Link href="/dashboard/documents" className="block p-3 rounded-lg bg-blue-50 text-blue-700 font-medium">Upload Dokumen</Link>
+          <Link href="/dashboard/documents" className="block p-3 rounded-lg bg-red-50 text-red-800 font-medium">Upload Dokumen</Link>
           <Link href="/dashboard/payment" className="block p-3 rounded-lg text-gray-600 hover:bg-gray-50">Pembayaran</Link>
           <Link href="/dashboard/exams" className="block p-3 rounded-lg text-gray-600 hover:bg-gray-50">Ujian Online</Link>
         </nav>
@@ -148,9 +148,9 @@ export default function DocumentUpload() {
         <div className="flex-1 overflow-auto p-6">
           <div className="bg-white p-8 rounded-xl border shadow-sm max-w-4xl mx-auto">
             
-            <div className="mb-8 border-l-4 border-blue-500 bg-blue-50 p-4 rounded-r-md">
+            <div className="mb-8 border-l-4 border-red-500 bg-red-50 p-4 rounded-r-md">
               <h3 className="text-sm font-bold text-blue-800">Informasi Penting</h3>
-              <p className="text-sm text-blue-700 mt-1">
+              <p className="text-sm text-red-800 mt-1">
                 Harap unggah dokumen yang sah dan jelas terbaca. Dokumen akan diverifikasi oleh panitia sebelum Anda dapat melanjutkan ke tahap ujian.
               </p>
             </div>
@@ -202,7 +202,7 @@ export default function DocumentUpload() {
                   className={`px-8 py-3 rounded-lg font-semibold text-white transition-all duration-200 ${
                     isUploading || (!files.ktp || !files.kk || !files.akte_kelahiran || !files.ijazah || !files.transkrip_nilai || !files.foto) 
                       ? 'bg-blue-300 cursor-not-allowed' 
-                      : 'bg-blue-600 hover:bg-blue-700 hover:shadow-lg transform hover:-translate-y-0.5'
+                      : 'bg-red-700 hover:bg-red-800 hover:shadow-lg transform hover:-translate-y-0.5'
                   }`}
                 >
                   {isUploading ? (

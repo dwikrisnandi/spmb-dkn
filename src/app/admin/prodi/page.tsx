@@ -46,7 +46,7 @@ export default async function AdminProdi() {
         <div className="flex-1 overflow-auto p-6">
           <div className="mb-4 flex justify-between items-center">
              <p className="text-sm text-gray-600">Kelola daftar program studi yang ditawarkan pada sistem SPMB.</p>
-             <button className="px-4 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700">Tambah Prodi Baru</button>
+             <button className="px-4 py-2 bg-red-700 text-white rounded-md text-sm font-medium hover:bg-red-800">Tambah Prodi Baru</button>
           </div>
           <div className="bg-white rounded-xl border shadow-sm">
             <div className="overflow-x-auto">
@@ -77,7 +77,7 @@ export default async function AdminProdi() {
                            </span>
                         </td>
                         <td className="px-6 py-4">
-                           <button className="text-blue-600 hover:underline mr-3 font-medium">Edit</button>
+                           <button className="text-red-700 hover:underline mr-3 font-medium">Edit</button>
                            <button className="text-red-600 hover:underline font-medium">Hapus</button>
                         </td>
                       </tr>

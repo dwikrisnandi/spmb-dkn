@@ -20,6 +20,9 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: settings?.titleHome || settings?.siteName || "SPMB DKN",
     description: settings?.institutionSynopsis || "Sistem Penerimaan Mahasiswa Baru",
+    icons: {
+      icon: settings?.favicon ? `/images/${settings.favicon}` : "/favicon.ico",
+    },
   };
 }
 

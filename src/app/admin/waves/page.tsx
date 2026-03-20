@@ -46,7 +46,7 @@ export default async function AdminWaves() {
         <div className="flex-1 overflow-auto p-6">
           <div className="mb-4 flex justify-between items-center">
              <p className="text-sm text-gray-600">Kelola batas waktu pendaftaran, ujian, dan gelombang aktif.</p>
-             <button className="px-4 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700">Tambah Gelombang</button>
+             <button className="px-4 py-2 bg-red-700 text-white rounded-md text-sm font-medium hover:bg-red-800">Tambah Gelombang</button>
           </div>
           <div className="bg-white rounded-xl border shadow-sm">
             <div className="overflow-x-auto">
@@ -80,7 +80,7 @@ export default async function AdminWaves() {
                            </span>
                         </td>
                         <td className="px-6 py-4">
-                           <button className="text-blue-600 hover:underline mr-3 font-medium">Edit</button>
+                           <button className="text-red-700 hover:underline mr-3 font-medium">Edit</button>
                         </td>
                       </tr>
                     ))

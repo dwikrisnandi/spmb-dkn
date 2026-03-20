@@ -16,7 +16,7 @@ export default function UserExams() {
       {!examStarted && (
         <aside className="w-64 bg-white shadow-md flex flex-col hidden md:flex">
           <div className="p-4 border-b">
-            <h1 className="text-xl font-bold text-blue-600">{settings?.shortName || "SPMB DKN"}</h1>
+            <h1 className="text-xl font-bold text-red-700">{settings?.shortName || "SPMB DKN"}</h1>
             <p className="text-xs text-gray-500">Panel Calon Mahasiswa</p>
           </div>
           <nav className="flex-1 p-4 space-y-2">
@@ -24,7 +24,7 @@ export default function UserExams() {
             <Link href="/dashboard/form" className="block p-3 rounded-lg text-gray-600 hover:bg-gray-50">Pengisian Formulir</Link>
             <Link href="/dashboard/documents" className="block p-3 rounded-lg text-gray-600 hover:bg-gray-50">Upload Dokumen</Link>
             <Link href="/dashboard/payment" className="block p-3 rounded-lg text-gray-600 hover:bg-gray-50">Pembayaran</Link>
-            <Link href="/dashboard/exams" className="block p-3 rounded-lg bg-blue-50 text-blue-700">Ujian Online</Link>
+            <Link href="/dashboard/exams" className="block p-3 rounded-lg bg-red-50 text-red-800">Ujian Online</Link>
           </nav>
           <LogoutButton />
         </aside>
@@ -46,7 +46,7 @@ export default function UserExams() {
           {!examStarted ? (
             <div className="bg-white p-8 rounded-xl border shadow-sm max-w-4xl mx-auto">
               <div className="text-center mb-6">
-                <div className="inline-flex items-center justify-center p-3 bg-blue-100 text-blue-600 rounded-full mb-4">
+                <div className="inline-flex items-center justify-center p-3 bg-blue-100 text-red-700 rounded-full mb-4">
                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-monitor-check"><path d="m9 10 2 2 4-4"/><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M12 17v4"/><path d="M8 21h8"/></svg>
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">Ujian Saringan Masuk</h3>
@@ -66,7 +66,7 @@ export default function UserExams() {
               <div className="flex justify-center">
                 <button 
                   onClick={() => setExamStarted(true)}
-                  className="px-8 py-3 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 shadow-md transition"
+                  className="px-8 py-3 bg-red-700 text-white rounded-lg font-bold hover:bg-red-800 shadow-md transition"
                 >
                   Mulai Ujian Sekarang
                 </button>
@@ -84,14 +84,14 @@ export default function UserExams() {
                 <div className="space-y-3 flex-1 mt-6">
                   {["A. 500", "B. 550", "C. 650", "D. 700", "E. 750"].map((opt) => (
                     <label key={opt} className="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50">
-                      <input type="radio" name="answer" className="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500" />
+                      <input type="radio" name="answer" className="h-4 w-4 text-red-700 border-gray-300 focus:ring-red-500" />
                       <span className="ml-3 text-sm text-gray-700">{opt}</span>
                     </label>
                   ))}
                 </div>
                 <div className="flex justify-between mt-8 pt-4 border-t">
                   <button className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 font-medium text-sm">Kembali</button>
-                  <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 font-medium text-sm">Soal Selanjutnya</button>
+                  <button className="px-4 py-2 bg-red-700 text-white rounded-md hover:bg-red-800 font-medium text-sm">Soal Selanjutnya</button>
                 </div>
               </div>
               
@@ -101,7 +101,7 @@ export default function UserExams() {
                 <div className="grid grid-cols-5 gap-2">
                   {Array.from({length: 50}).map((_, i) => (
                     <button key={i} className={`w-8 h-8 flex items-center justify-center rounded text-xs font-medium border
-                      ${i === 0 ? 'bg-blue-600 text-white border-blue-600' : 
+                      ${i === 0 ? 'bg-red-700 text-white border-blue-600' : 
                         i < 5 ? 'bg-green-100 text-green-700 border-green-200' : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50'}
                     `}>
                       {i + 1}

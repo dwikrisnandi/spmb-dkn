@@ -50,14 +50,14 @@ export default function PaymentSubmission() {
     <div className="flex h-screen bg-gray-100">
       <aside className="w-64 bg-white shadow-md flex flex-col hidden md:flex">
         <div className="p-4 border-b">
-          <h1 className="text-xl font-bold text-blue-600">{settings?.shortName || "SPMB DKN"}</h1>
+          <h1 className="text-xl font-bold text-red-700">{settings?.shortName || "SPMB DKN"}</h1>
           <p className="text-xs text-gray-500">Panel Calon Mahasiswa</p>
         </div>
         <nav className="flex-1 p-4 space-y-2">
           <Link href="/dashboard" className="block p-3 rounded-lg text-gray-600 hover:bg-gray-50 font-medium">Dashboard</Link>
           <Link href="/dashboard/form" className="block p-3 rounded-lg text-gray-600 hover:bg-gray-50">Pengisian Formulir</Link>
           <Link href="/dashboard/documents" className="block p-3 rounded-lg text-gray-600 hover:bg-gray-50">Upload Dokumen</Link>
-          <Link href="/dashboard/payment" className="block p-3 rounded-lg bg-blue-50 text-blue-700">Pembayaran</Link>
+          <Link href="/dashboard/payment" className="block p-3 rounded-lg bg-red-50 text-red-800">Pembayaran</Link>
         </nav>
         <LogoutButton />
       </aside>
@@ -100,7 +100,7 @@ export default function PaymentSubmission() {
                 <button 
                   type="submit"
                   disabled={isLoading}
-                  className="w-full px-6 py-2 rounded-md font-medium text-sm bg-blue-600 text-white hover:bg-blue-700 disabled:bg-blue-400"
+                  className="w-full px-6 py-2 rounded-md font-medium text-sm bg-red-700 text-white hover:bg-red-800 disabled:bg-blue-400"
                 >
                   {isLoading ? 'Menunggu...' : 'Konfirmasi Pembayaran'}
                 </button>

@@ -3,11 +3,13 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useSettings } from "@/components/SettingsProvider";
 
 export default function RegisterPage() {
   const router = useRouter();
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const settings = useSettings();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -63,11 +65,11 @@ export default function RegisterPage() {
       <div className="w-full max-w-md space-y-8 bg-white p-8 rounded-xl shadow-lg border border-gray-100">
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Daftar Akun Baru
+            Daftar Akun {settings?.shortName || ""}
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
             Sudah punya akun?{" "}
-            <Link href="/login" className="font-medium text-blue-600 hover:text-blue-500">
+            <Link href="/login" className="font-medium text-red-700 hover:text-blue-500">
               Pendaftaran via Login
             </Link>
           </p>
@@ -88,7 +90,7 @@ export default function RegisterPage() {
                 name="name"
                 type="text"
                 required
-                className="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
+                className="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-red-500 focus:outline-none focus:ring-red-500 sm:text-sm"
                 placeholder="Nama Lengkap Sesuai Ijazah"
                 value={formData.name}
                 onChange={handleChange}
@@ -101,7 +103,7 @@ export default function RegisterPage() {
                 name="email"
                 type="email"
                 required
-                className="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
+                className="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-red-500 focus:outline-none focus:ring-red-500 sm:text-sm"
                 placeholder="Alamat Email Aktif"
                 value={formData.email}
                 onChange={handleChange}
@@ -114,7 +116,7 @@ export default function RegisterPage() {
                 name="phone"
                 type="tel"
                 required
-                className="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
+                className="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-red-500 focus:outline-none focus:ring-red-500 sm:text-sm"
                 placeholder="Nomor Telepon / WhatsApp"
                 value={formData.phone}
                 onChange={handleChange}
@@ -127,7 +129,7 @@ export default function RegisterPage() {
                 name="password"
                 type="password"
                 required
-                className="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
+                className="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-red-500 focus:outline-none focus:ring-red-500 sm:text-sm"
                 placeholder="Password (minimal 8 karakter)"
                 value={formData.password}
                 onChange={handleChange}
@@ -140,7 +142,7 @@ export default function RegisterPage() {
                 name="confirmPassword"
                 type="password"
                 required
-                className="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
+                className="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-red-500 focus:outline-none focus:ring-red-500 sm:text-sm"
                 placeholder="Konfirmasi Password"
                 value={formData.confirmPassword}
                 onChange={handleChange}
@@ -151,9 +153,10 @@ export default function RegisterPage() {
           <div>
             <button
               type="submit"
-              className="group relative flex w-full justify-center rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              disabled={isLoading}
+              className="group relative flex w-full justify-center rounded-md border border-transparent bg-red-700 py-2 px-4 text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 disabled:opacity-50 transition-all"
             >
-              Daftar Sekarang
+              {isLoading ? "Memproses..." : "Daftar Sekarang"}
             </button>
           </div>
         </form>
